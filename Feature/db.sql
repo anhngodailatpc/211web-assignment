@@ -29,19 +29,11 @@ CREATE TABLE `posts`(
 INSERT INTO roles VALUES(1,'Khach');
 INSERT INTO roles VALUES(2,'ThanhVien');
 INSERT INTO roles VALUES(3,'QuanTriVien');
-INSERT INTO users (name,pass,email,role) VALUES ('Thanhvien1','1234', 'tv1@gmail.com', 2);
-INSERT INTO users (name,pass,email,role) VALUES ('Admin1','1234', 'admin1@gmail.com', 3);
+INSERT INTO users (name,pass,email,role) VALUES ('member','1234', 'member@gmail.com', 2);
+INSERT INTO users (name,pass,email,role) VALUES ('admin','1234', 'admin1@gmail.com', 3);
 
 -- PRICING
 -- 
-insert into item values ('Basic Shopify',29,true,true,2,true,true,4,true,true,true,true,true,false,false,false,
-                             64,true,false,
-                             true,2.9,2.7,2.0,
-                             true,89,
-                             true,false,false,false);
-insert into item values ('Advanced Shopify',299,true,true,15,true,true,8,true,true,true,true,true,true,true,true, 74,true,true, true,2.4,2.4,0.5, true,89, true,true,true,true);
-insert into item values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true);
-
 
 CREATE TABLE `item` (
   `name` varchar(255) NOT NULL,
@@ -76,6 +68,15 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
                              
 
+insert into item values ('Basic Shopify',29,true,true,2,true,true,4,true,true,true,true,true,false,false,false,
+                             64,true,false,
+                             true,2.9,2.7,2.0,
+                             true,89,
+                             true,false,false,false);
+insert into item values ('Advanced Shopify',299,true,true,15,true,true,8,true,true,true,true,true,true,true,true, 74,true,true, true,2.4,2.4,0.5, true,89, true,true,true,true);
+insert into item values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true);
+
+
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('1','Trang web của tôi có được hỗ trợ vĩnh viễn không?',-1,1609151819);
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('1','Tôi không đăng nhập vào trang web của mình được?',-1,1609151819);
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('2','Rất tiếc nhưng chúng tôi chỉ hỗ trợ trong vòng 2 năm',1,1609151819);
@@ -104,3 +105,4 @@ CREATE TABLE `examples`(
     PRIMARY KEY(id)
 );
 
+-- INSERT INTO examples(img_name, img, href, title) VALUES ('web','www.shopify.com.vn');
