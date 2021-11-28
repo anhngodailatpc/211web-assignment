@@ -9,12 +9,11 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
 ?>
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Product</title>
-  <link rel="stylesheet" href="css/pricing_admin.css" />
+  <link rel="stylesheet" href="css/example_admin.css" />
   <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -32,14 +31,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
@@ -61,24 +53,13 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
           <div class="col-sm-12">
             <a href="./management.php">Quản lý người dùng</a>
           </div>
-          <!-- <div class="col-sm-12">
-                        <a href="./login.php">Đăng nhập</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./register.php">Đăng ký</a>
-                    </div> -->
           <div class="col-sm-12">
-            <button onclick="window.location.href='./service/auth.php?logout=true'">Đăng xuất</button>
+            <a href="./example_admin.php">Quản lý sản phẩm</a>
+          </div>
+          <div class="col-sm-12">
+            <button onclick="window.location.href='login.php'">Đăng xuất</button>
           </div>
         </div>
-        <!-- <div class="row">
-                    <div class="col-sm-12">
-                        <a href="./about.php">Về chúng tôi</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./contact.php">Liên hệ</a>
-                    </div>
-                </div> -->
       </div>
     </div>
 
@@ -95,17 +76,17 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
       <div class="collapse navbar-collapse" id="header-menu">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a class="nav-link" id="myview" href="./pricing_admin.php">Quản lý bảng giá</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./management.php">Quản lý người dùng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="myview">Quản lý bảng giá</a>
+            <a class="nav-link" href="./example_admin.php">Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./service/auth.php?logout=true">Đăng xuất</a>
+            <a class="nav-link" href="./login.php">Đăng xuất</a>
           </li>
-          <!-- <li class="nav-item">
-                        <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
-                    </li> -->
         </ul>
       </div>
     </nav>

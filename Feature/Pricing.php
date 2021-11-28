@@ -58,25 +58,19 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </div>';
                     }
                     ?>
-          <?php
-                    if ($_SESSION['role'] == 3) {
-
-                        echo "<div class='col-sm-12'>
-                                    <a href='./pricing_admin.php'>Bảng giá</a>
-                                </div>";
-                    } else {
-                        echo "<div class='col-sm-12'>
-                                    <a href='./pricing_admin.php'>Bảng giá</a>
-                                </div>";
-                        echo "<div class='col-sm-12'>
-                            <a href='./pricing.php'>Bảng giá</a>
-                        </div>";
-                    }
-
-                    ?>
+          <div class='col-sm-12'>
+            <a href='./pricing.php'>Bảng giá</a>
+          </div>
           <div class="col-sm-12">
             <a href="./examples.php">Sản phẩm mẫu</a>
           </div>
+          <?php
+                        if ($_SESSION['role'] == 3) {
+                            echo '<div class="col-sm-12">
+                            <a href="./pricing_admin.php">Quản lý</a>
+                        </div>';
+                        }
+                        ?>
           <?php
                     if ($_SESSION['role'] == 1) {
                         echo '<div class="col-sm-12">
@@ -125,17 +119,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
           </li>
           <!-- HANDLE PRICIE -->
           <li class="nav-item">
-            <?php
-                        if ($_SESSION['role'] == 3) {
-
-                            echo "<a class='nav-link' href='./pricing_admin.php'>Bảng giá</a>
-                            ";
-                        } else {
-                            echo "<a class='nav-link' href='./pricing.php'>Bảng giá</a>
-                            ";
-                        }
-
-                        ?>
+            <a class='nav-link' href='./pricing.php'>Bảng giá</a>
           </li>
           <!-- END HANDLE PRICE -->
           <!-- <li class="nav-item">
@@ -144,6 +128,16 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </li> -->
           <li class="nav-item">
             <a class="nav-link" href="./examples.php">Sản phẩm</a>
+          </li>
+          <?php
+                        if ($_SESSION['role'] == 3) {
+                            echo '<li class="nav-item">
+                            <a class="nav-link" href="./pricing_admin.php">Quản lý</a>
+                          </li>';
+                        }
+                        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.php">Liên hệ</a>
           </li>
           <?php
                     if ($_SESSION['role'] == 1) {
@@ -169,13 +163,14 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
   </div>
   <!-- Starting Intro Part -->
   <div id="body-content">
-    X
-    <div class="jumbotron first-jumbotron" style="padding-top: 5em">
+
+    <div class="jumbotron first-jumbotron" style="margin: 0">
       <h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
       <p class="display-4">Dùng thử 14 ngày không cần thẻ tín dụng</p>
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="./login.php" role="button">Dùng thử miễn phí</a>
       </p>
+
     </div>
     <!-- Ending Intro Part -->
     <!-- Starting Table Part -->
@@ -205,224 +200,10 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     ?>
         </tr>
 
-
-
-
-
-
-        <!-- <th scope="col">
-                Shopify<br />
-                <span>Phát triển doanh nghiệp</span>
-            </th> -->
-        <!-- <th scope="col" style="width: 20%">
-						<span class="font-weight:bolder">Shopify<br /></span>
-						<span>Phát triển doanh nghiệp</span>
-					</th> -->
-        <!-- <th scope="col">
-                Nâng cao <br />
-                <span>Mở rộng doanh nghiệp</span>
-            </th> -->
         </tr>
       </thead>
       <tbody>
-        <!-- <tr>
-					<td>Chi phí mỗi tháng</td>
-					<td><span class="strong-text">299.000</span><span class="sub-align">/1thang</span></td>
 
-					<td><span class="strong-text">799.000</span><span class="sub-align">/1thang</span></td>
-
-					<td><span class="strong-text">2.999.000</span><span class="sub-align">/1thang</span></td>
-				</tr>
-
-				<tr class="my-second-title">
-					<td colspan="4">ĐIỂM ĐẶC TRƯNG</td>
-				</tr>
-
-				<tr>
-					<td>Cửa hàng Online</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Không giới hạn số sản phẩm</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Tài khoản nhân viên<br />Nhân viên với vai trò quản trị hoặc POS</td>
-					<td><span>2</span></td>
-					<td><span>5</span></td>
-					<td><span>15</span></td>
-				</tr>
-
-				<tr>
-					<td>Hỗ trợ 24/7</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>
-						Kênh bán hàng<br />
-						Bán trên phiên chợ online, mạng xã hội.<br />
-						Các kênh khả dụng tùy thuộc mỗi quốc gia
-					</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Vị trí<br />Chỉ định kho bãi, quảng cáo, nơi bạn lưu trữ sản phẩm</td>
-					<td><span>Tối đa 4</span></td>
-					<td><span>Tối đa 5</span></td>
-					<td><span>Tối đa 6</span></td>
-				</tr>
-
-				<tr>
-					<td>Tạo đơn đặt hàng thủ công</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Mã giảm giá</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Chứng chỉ SSL miến phí</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Phục hồi giỏ hàng bị hủy</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Thẻ quà tặng</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Báo cáo chuyên môn</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Xây dựng cáo cáo chuyên môn</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-<span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Giá cước vận chuyển của bên thứ ba<br />Hiển thị bảng giá của bạn hoặc của bên thứ ba</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-
-				<tr class="my-second-title">
-					<td colspan="4">SHOPIFY GIAO HÀNG</td>
-				</tr>
-				<tr>
-					<td>Giảm giá vận chuyển<br />Giá cước vận chuyển cạnh tranh từ DHL Express, UPS hoặc USPS.</td>
-					<td>64%</td>
-					<td>72%</td>
-					<td>74%</td>
-				</tr>
-
-				<tr>
-					<td>In mã vận chuyển</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Giá dịch vụ bưu chính hoa kỳ ưu tiên</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr class="my-second-title">
-					<td colspan="4">SHOPIFY dịch vụ thanh toán</td>
-				</tr>
-				<tr>
-					<td>Phí thanh toán thẻ tín dụng online</td>
-					<td>2.9% + 30¢ USD</td>
-					<td>2.6% + 30¢ USD</td>
-					<td>2.4% + 30¢ USD</td>
-				</tr>
-				<tr>
-					<td>Phí thanh toán thẻ tín dụng online</td>
-					<td>2.7% + 0¢ USD</td>
-					<td>2.5% + 0¢ USD</td>
-					<td>2.4% + 0¢ USD</td>
-				</tr>
-				<tr>
-					<td>Phí thanh toán thẻ tín dụng trực tiếp</td>
-					<td>2.0%</td>
-					<td>1.0%</td>
-					<td>0.5%</td>
-				</tr>
-				<tr>
-					<td>Phụ phí khi sử dụng dịch vụ thanh toán không thuộc Shopify</td>
-					<td>+$89 USD/1 tháng</td>
-					<td>+$89 USD/1 tháng</td>
-					<td>+$89 USD/1 tháng</td>
-				</tr>
-				<tr class="my-second-title">
-					<td colspan="4">Điểm bán hàng</td>
-				</tr>
-				<tr>
-					<td>Mua sắm POS Lite<br />Chấp nhận thanh toán trực tiếp ngay lập tức tại web, hội chợ, ...</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Shopify POS Pro<br />Các công cụ quản lý cửa hàng và các tính năng đa kênh cần thiết cho các doanh nghiệp.</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr class="my-second-title">
-					<td colspan="4">Bán hàng xuyên quốc gia.</td>
-				</tr>
-				<tr>
-					<td>Sử dụng 133 loại tiền tệ</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Tỷ lệ ngoại hối<br />Kiểm soát giá cả cho người mua quốc tế với một tỷ giá ngoại hối cố định.</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr>
-				<tr>
-					<td>Bán hàng đa ngôn ngữ<br />Kiểm soát giá cả cho người mua quốc tế với một tỷ giá ngoại hối cố định.</td>
-					<td>-</td>
-					<td>Tối đa 2</td>
-					<td>Tối đa 5</td>
-				</tr>
-				<tr>
-					<td>
-						Tên miền quốc tế<br />
-						Đặt tên miền theo quốc gia cụ thể để tối ưu hóa SEO quốc tế<br />
-					</td>
-					<td>-</td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-					<td><span class="my-ok-icon">&#10003;</span></td>
-				</tr> -->
       </tbody>
     </table>
     <!-- Ending Table Part -->
