@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image_name = $_POST['image_name'];
         $link = $_POST['image_link'];
         $title = $_POST['title'];
+        echo $_POST['title'];
         if ($link == "" || $title == "" || $image_name == "") return;
         $sql = "INSERT INTO `examples` (`img`, `img_name`,`href`,`title`) VALUES ( '{$image}', '{$image_name}','{$link}', '{$title}')";
         if (!mysqli_query($con, $sql)) { // Error handling

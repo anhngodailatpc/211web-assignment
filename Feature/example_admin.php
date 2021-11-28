@@ -106,7 +106,13 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
           <label class='col-sm-4'>Link: </label><input class='col-sm-8' type="text" name="image_link" />
         </div>
         <div class='row'>
-          <label class='col-sm-4'>Chủ đề: </label><input class='col-sm-8' type="text" name="title" />
+          <label class='col-sm-4'>Chủ đề: </label>
+          <select name="title" id="title">
+            <option value="home-furniture">Nhà cửa và nội thất</option>
+            <option value="book">Sách</option>
+            <option value="clothing">Quần áo và thời trang</option>
+            <option value="jewelry">Trang sức và phụ kiện</option>
+          </select>
         </div>
         <div class='row'>
           <input class='col-sm' type="submit" />
@@ -132,7 +138,13 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
           <label class='col-sm-4'>Link: </label><input class='col-sm-8' type="text" name="image_link" id="edit_href" />
         </div>
         <div class='row'>
-          <label class='col-sm-4'>Chủ đề: </label><input class='col-sm-8' type="text" name="title" id="edit_title" />
+          <label class='col-sm-4'>Chủ đề: </label>
+          <select name="title" id="edit_title">
+            <option value="home-furniture">Nhà cửa và nội thất</option>
+            <option value="book">Sách</option>
+            <option value="clothing">Quần áo và thời trang</option>
+            <option value="jewelry">Trang sức và phụ kiện</option>
+          </select>
         </div>
         <div class='row'>
           <input class='col-sm' type="submit" />
