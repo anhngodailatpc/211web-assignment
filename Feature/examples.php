@@ -57,6 +57,13 @@ mysqli_close($con);
               <a href="./examples.php">Sản phẩm mẫu</a>
             </div>
             <?php
+                        if ($_SESSION['role'] == 3) {
+                            echo '<div class="col-sm-12">
+                            <a href="./pricing_admin.php">Quản lý</a>
+                        </div>';
+                        }
+                        ?>
+            <?php
                         if ($_SESSION['role'] == 1) {
                             echo '<div class="col-sm-12">
                             <a href="./login.php">Đăng nhập</a>
@@ -105,6 +112,16 @@ mysqli_close($con);
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./examples.php">Sản phẩm</a>
+            </li>
+            <?php
+                        if ($_SESSION['role'] == 3) {
+                            echo '<li class="nav-item">
+                            <a class="nav-link" href="./pricing_admin.php">Quản lý</a>
+                          </li>';
+                        }
+                        ?>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.php">Liên hệ</a>
             </li>
             <?php
                         if ($_SESSION['role'] == 1) {
