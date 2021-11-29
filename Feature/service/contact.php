@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    include "../config.php";
+    include "../service/config.php";
     $result = mysqli_query($con, "SELECT * FROM contact");
     $out = array();
     while ($row = mysqli_fetch_assoc($result)) {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo json_encode($out);
 }
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    include "../config.php";
+    include "../service/config.php";
     $params = explode('/', trim($_SERVER['PATH_INFO'], '/'));
 
     if (!isset($params[0])) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         echo json_encode('Noi dung cap nhat rong');
         return;
     }
-    include "../config.php";
+    include "../service/config.php";
     $result = mysqli_query($con, "SELECT * FROM contact WHERE `fieldname`='$fieldname'");
     if ($result->num_rows == 0) {
         $out = mysqli_query($con, "INSERT INTO contact(fieldname, content) VALUES ('$fieldname','$content');");

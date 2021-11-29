@@ -9,7 +9,7 @@ if ($_SESSION['role'] == 1) {
 if ($_SESSION['role'] == 2) {
     header('Location: ./index.php');
 }
-include "config.php";
+include "./service/config.php";
 $resultiter = mysqli_query($con, "SELECT * FROM examples");
 $img = array();
 while ($row = mysqli_fetch_assoc($resultiter)) {

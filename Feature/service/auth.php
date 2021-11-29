@@ -3,7 +3,7 @@ session_start();
 
 
 if (isset($_POST['login'])) {
-    include "../config.php";
+    include "../service/config.php";
     $result = "";
     if (!isset($_POST['username']) || !isset($_POST['password'])) {
         $result = "Wrong password, username.";
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
     }
 }
 if (isset($_POST['register'])) {
-    include "../config.php";
+    include "../service/config.php";
     $result = "";
     if (!isset($_POST['username']) || !isset($_POST['password'])) {
         $result = "Wrong password, username.";
@@ -92,7 +92,7 @@ if (isset($_POST['register'])) {
 }
 
 if (isset($_POST['adjust'])) {
-    include "../config.php";
+    include "../service/config.php";
     $result = "";
 
     $username = $_POST['username'];
@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         header("location:../login.php");
         return;
     }
-    include "../config.php";
+    include "../service/config.php";
 
 
     $result = mysqli_query($con, "SELECT * FROM users WHERE id = {$_SESSION['userID']} ");
