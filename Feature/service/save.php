@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './service/config.php';
 
 if (count($_POST) > 0) {
     if ($_POST['type'] == 2) {

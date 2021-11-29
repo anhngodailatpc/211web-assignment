@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_GET['getall'])) {
-    include "../config.php";
+    include "../service/config.php";
     $query = "SELECT * FROM `posts`";
     $resultiter = mysqli_query($con, $query);
     $result = array();
@@ -21,7 +21,7 @@ if (isset($_GET['getall'])) {
     echo json_encode($result);
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include "../config.php";
+    include "../service/config.php";
     $postID = $_POST['postID'];
     $userid = $_POST['userid'];
     $content = $_POST['content'];
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    include "../config.php";
+    include "../service/config.php";
     $params = explode('/', trim($_SERVER['PATH_INFO'], '/'));
 
     if (!isset($params[0])) {
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         echo json_encode('Noi dung cap nhat rong');
         return;
     }
-    include "../config.php";
+    include "../service/config.php";
     $result = mysqli_query($con, "UPDATE posts SET content='$content' WHERE id='$id'");
 
     if ($result === TRUE) {

@@ -1,6 +1,6 @@
 <?php
 
-include "config.php";
+include "../service/config.php";
 $return_arr = array();
 
 $query = "SELECT * FROM item";

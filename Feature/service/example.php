@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['img_id'])) {
-        include "../config.php";
+        include "../service/config.php";
         if (!($_FILES['image']['tmp_name'])) {
             header('location:../example_admin.php');
             return;
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_close($con);
         header('location:../example_admin.php');
     } else {
-        include "../config.php";
+        include "../service/config.php";
         $newImg = true;
         if (!($_FILES['image']['tmp_name'])) {
             $newImg = false;
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    include "../config.php";
+    include "../service/config.php";
     $resultiter = mysqli_query($con, "SELECT * FROM examples");
     $img = array();
     while ($row = mysqli_fetch_assoc($resultiter)) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo json_encode($img);
 }
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    include "../config.php";
+    include "../service/config.php";
     $params = explode('/', trim($_SERVER['PATH_INFO'], '/'));
     if (!isset($params[0])) {
         mysqli_close($con);

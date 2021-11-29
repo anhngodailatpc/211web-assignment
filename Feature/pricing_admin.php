@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './service/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +85,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <a class="nav-link" href="./example_admin.php">Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./login.php">Đăng xuất</a>
+            <a class="nav-link" href="./service/auth.php?logout=true">Đăng xuất</a>
           </li>
         </ul>
       </div>

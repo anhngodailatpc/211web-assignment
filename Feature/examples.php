@@ -3,7 +3,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
-include "config.php";
+include "./service/config.php";
 $resultiter = mysqli_query($con, "SELECT * FROM examples");
 $img = array();
 while ($row = mysqli_fetch_assoc($resultiter)) {

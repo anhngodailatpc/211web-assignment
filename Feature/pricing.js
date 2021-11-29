@@ -2,7 +2,7 @@ $(document).ready(function () {
   // $("#myview").click(function() {
 
   $.ajax({
-    url: './viewPrice.php',
+    url: './service/viewPrice.php',
     type: 'get',
     dataType: 'JSON',
     success: function (response) {
@@ -43,7 +43,7 @@ $(document).ready(function () {
     // $("#myview").click(function() {
 
     $.ajax({
-      url: './viewPrice.php',
+      url: './service/viewPrice.php',
       type: 'get',
       dataType: 'JSON',
       success: function (response) {
